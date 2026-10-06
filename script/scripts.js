@@ -22,7 +22,7 @@ speed: "1",
 health: "3",
 };
 
-let newClass = {
+let Archer = {
     id:"4",
 class: "archer",
 strength: "1",
@@ -44,25 +44,29 @@ console.table(Chivalry2);
 
 // 3. forEach fix (renamed callback parameter)
 Chivalry2.forEach(item => {
-   if (item.class === newClass.class) {
+   if (item.class === Archer.class) {
         exists = true;
     }
 });
 
-// 4. Push new object to array
-Chivalry2.push({
-class: "archer",
-strength: "1",
-speed: "3",
-health: "1",
-});
-
 if (!exists) {
-    Chivalry2.push(newClass);
+    Chivalry2.push(Archer);
     console.log("Archer was added to the array.");
 } else {
     console.log("Archer already exists in the array!");
 }
+
+
+// 4. Push new object to array
+console.log("Peasant was added to the array.");
+Chivalry2.push({
+    id:"5",
+class: "peasant",
+strength: "1",
+speed: "1",
+health: "1",
+});
+
 
 console.table(Chivalry2);
 
